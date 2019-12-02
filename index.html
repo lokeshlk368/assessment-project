@@ -1,0 +1,188 @@
+<html>
+<html lang="en">
+<head>
+  <title>Zomato website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+ <link rel="stylesheet" href="index.css"/>
+ </head>
+
+ <body>
+  <section id="HOME">
+    <nav class="navbar navbar-expand-sm navbar-dark navbar-fixed-top">
+     <ul class="navbar-nav">
+       <li class="nav-item">
+          <a class="nav-link" id="header" href="#WEATHER1" style="color:black;"><b>WEATHER CHECK</b></a>
+       </li>
+     </ul>
+    <ul class="navbar-nav ml-auto">
+       <li class="nav-item">
+         <a class="nav-link" id="header" href="#HOME" style="color:black;"><b>HOME</b></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" id="header" href="#FOODOUTPUT" style="color:black;"><b>ORDER FOOD</b></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" id="header" href="#DISRESTAURANTS" style="color:black;"><b>ABOUT US</b></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" id="header"  href="#FOOTERFINAL" style="color:black;"><b>CONTACT US</b></a>
+      </li>
+   </ul>
+  </nav>
+   <div class="container-fluid pd-0">
+      <img id="zomatoImg" src="top-view-of-food-1640772.jpg"/>
+   </div>
+  <marquee class="marq" direction = "left" loop="" scrollamount="16">
+   <div class="geek1"><h2 id="restaurants"><b>Find the best restaurants, cafés, and bars</b></h2></div>
+  </marquee>
+   <div>
+       <img id="zomatoLogo" src="Zomato_company_logo.png"/>
+    </div>
+  <select id="select_id" class="form-control form-control-lg" style="width:320px;height:50px; position:relative; left:250px">
+     <option value="Select City" hidden>Select City</option>
+     <option value="4">Bengaluru</option>
+     <option value="3" >Mumbai</option>
+     <option value="1">Delhi</option>
+     <option value="6">Hyderabad</option>
+     <option value="5">Pune</option>
+     <option value="7">Chennai</option>
+      <option value="8">Lucknow</option>
+      <option value="9">Kochi</option>
+      <option value="10">Jaipur</option>
+     <option value="11333">Patiala</option>
+   </select>
+  <div class="form-group" id="search_id">
+   <input id="getRestro" type="text" class="form-control" placeholder="Search For Restaurant"> <br>
+   </div>
+   <button id = "search" class = "btn btn-success btn-block col-xs-2">Search</button>
+  </section>
+   <section id="FOODOUTPUT">
+  <div class="container-fluid" style="position:relative; bottom:400px;">
+          <div>
+              <div id="output" class = "message  col-md-12"></div>
+          </div>
+        </div>
+ </section>
+   <section id="DISRESTAURANTS">
+    <div class="container-fluid pd-0" id="DiscoverRestaurants">
+       <h1 style="color:green; text-align:center; background-color:#c2c2a3; font-family:customFont1;">Discover restaurants by type of meal</h1>
+        <ul id="ul1">
+               <li>
+              <a href="#"><img src="breakfast-1541916-1308767.png" class="quick"/></a>
+            <h5 style="margin-left:145px;"><b>Delivery</b></h5>
+            </li>
+            <li>
+                <a href="#"><img src="breakfast_icon_2x.jpg" class="quick"/></a>
+                <h5 style="margin-left:155px;"><b>Breakfast</b></h5>
+            </li>
+            <li>
+             <a href="#"><img src="img_159558.png" class="quick"/></a>
+          <h5  style="margin-left:155px;"><b>Lunch</b></h5>
+          </li>
+          <li>
+              <a href="#"><img src="canva-family-dinner-icon-MACxTnnHXhA.png" class="quick"/></a>
+            <h5  style="margin-left:155px;"><b>Dinner</b></h5>
+          </li>
+          <li>
+              <a href="#"><img src="cafe-icon-2.jpg" class="quick"/></a>
+              <h5  style="margin-left:155px;"><b>Cafe's</b></h5>
+          </li>
+        </ul>
+
+   </div>
+  </section>
+
+   <section id="WEATHER1">
+   <div class="jumbotron" id="weather">
+    <div class="row">
+    <div class="col-5" style="border:1px dotted gray; background-image:url('1.jpg'); height:400px;">
+    <h1 style="color:red; padding-top:30px;"><center>Weather And Climate Information</center></h1>
+    <div class="form-group">
+     <center><input type="text" class="form-control" id="value" placeholder="Enter Your City Name" style="height:55px; width:500px;"></center>
+    </div>
+    <center> <button onclick="weather()" class="button button3 btn btn-success">Get Your Details</button></center>
+     </div>
+    <div class="col-2">
+    </div>
+   <div class="col-5"  style="border:1px dotted gray; background-image:url('images.jpg');">
+   <center>
+   <div id="temp" style="color:#00cc99;">  </div>
+   <div id="speed" style="color:#ffff00;"></div>
+   <div id="humidity" style="color:#00ff00; font-family:customFont1"></div>
+   </center>
+   </div>
+   </div>
+  </div>
+   </section>
+
+ <section id="FOOTERFINAL">
+  <div style="height:65px; background-color:#fff0b3; position: relative; bottom:300px;">
+  <center><h2 style="color: #ff0000; text-shadow:0px 0px 2px yellow;  font-family:customFont1;">FULL STACK DEVELOPER</h2></center>
+  </div>
+ <div class="container-fluid" id="footer">
+  <div class="row">
+    <div class="col-4" style="background-color:#e6ffe6;">
+      <center>
+       <h3 style="color:#0000ff;">Lokesh Kumar</h3>
+         <b>D.O.B:</b> 24/01/1999<br>
+          <b>Roll No:</b>1710991439</br>
+         <b>Phone No.:</b>9878483238<br>
+         <b>Email:</b> lk689735@gmail.com<br>
+         <a href=" https://lokeshlk368.github.io/RESUME/"><b>Resume</b></a>
+         <hr>
+     </center>
+    </div>
+      <div class="col-4" style="background-color:#f2e6ff;">
+       <center>  <h3 style="color:#009999;">Surjit Kumar</h3>
+           <b>D.O.B:</b> 24/06/1998<br>
+           <b>Roll No:</b>1710991820</br>
+           <b>Phone No.:</b>1710991820<br>
+           <b>Email:</b>surjitkamsterio8559@gmail.com<br>
+           <a href="https://github.com/surjityadav/Resume_example"><b>Resume</b></a>
+           <hr>
+    </center>
+      </div>
+        <div class="col-4" style="background-color:#ebebe0;">
+         <center> <h3 style="color:#ff9900;">Sachit Gupta</h3>
+             <b>D.O.B:</b> 14/04/1999<br>
+             <b>Roll No:</b>1710991689</br>
+             <b>Phone No.:</b>1710991689<br>
+             <b>Email:</b>sachitgupta0001@gmail.com<br>
+             <a href="https://sachitgupta99.github.io/resume/"><b>Resume</b></a>
+             <hr>
+    </center>
+       </div>
+      </div>
+    </div>
+    <div class="container-fluid pd-0" style="background-color: #a3a375; position:relative; bottom:270px;">
+       <ul id="footerUn">
+     <li id="footerList">
+     <a href="https://www.facebook.com/profile.php?id=100011376595579" id="footerAnchor">
+    <i class="fab fa-facebook-f icon"></i></a>
+    </li>
+    <li  id="footerList">
+    <a href="https://twitter.com/lokeshkumar368"  id="footerAnchor"><i class="fab fa-twitter icon"></i></a>
+    </li>
+   <li  id="footerList">
+   <a href="#"  id="footerAnchor"><i class="fab fa-linkedin-in icon"></i></a></li>
+   <li  id="footerList">
+    <a  href="https://myaccount.google.com/"  id="footerAnchor"><center><i class="fab fa-google-plus-g icon"></i></center></a></li>
+   </ul>
+   </div>
+  </section>
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="index.js"></script>
+       <script src="weather.js"></script>
+</body>
+
+
+</html>
