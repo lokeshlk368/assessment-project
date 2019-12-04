@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
  <link rel="stylesheet" href="index.css"/>
  </head>
@@ -102,7 +101,7 @@
    <section id="WEATHER1">
    <div class="jumbotron" id="weather">
     <div class="row">
-    <div class="col-5" style="border:1px dotted gray; background-image:url('1.jpg'); height:400px;">
+    <div class="col-5" style="border:1px dotted gray; background-image:url('1.jpg'); height:400px; box-shadow:0px 0px 10px yellow;">
     <h1 style="color:red; padding-top:30px;"><center>Weather And Climate Information</center></h1>
     <div class="form-group">
      <center><input type="text" class="form-control" id="value" placeholder="Enter Your City Name" style="height:55px; width:500px;"></center>
@@ -111,7 +110,7 @@
      </div>
     <div class="col-2">
     </div>
-   <div class="col-5"  style="border:1px dotted gray; background-image:url('images.jpg');">
+   <div class="col-5"  style="border:1px dotted gray; background-image:url('images.jpg'); box-shadow:0px 0px 10px green;">
    <center>
    <div id="temp" style="color:#00cc99;">  </div>
    <div id="speed" style="color:#ffff00;"></div>
@@ -121,9 +120,12 @@
    </div>
   </div>
    </section>
+   
+   <div id="map" style="height:400px;width:1515px;background-color:red;position:relative;bottom:320px;border:2px dotted black;"></div>
+
 
  <section id="FOOTERFINAL">
-  <div style="height:65px; background-color:#fff0b3; position: relative; bottom:300px;">
+  <div style="height:65px; background-color:#fff0b3; position: relative; bottom:260px;">
   <center><h2 style="color: #ff0000; text-shadow:0px 0px 2px yellow;  font-family:customFont1;">FULL STACK DEVELOPER</h2></center>
   </div>
  <div class="container-fluid" id="footer">
@@ -183,6 +185,44 @@
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        <script src="index.js"></script>
 <!--        <script src="weather.js"></script> -->
+       <script>
+  function initMap(){
+
+    var options = {
+      zoom:4,
+      center:{lat:20.5937,lng:78.9629}
+    }
+    var map = new google.maps.Map(document.getElementById('map'), options);
+    var markers = [
+      {
+        coords:{lat:30.3398,lng:76.3869},
+
+      },
+      {
+        coords:{lat:30.7333,lng:76.7794},
+
+      },
+      {
+        coords:{lat:30.4766,lng:76.5905}
+      }
+    ];
+
+    for(var i = 0;i < markers.length;i++){
+
+      addMarker(markers[i]);
+    }
+    function addMarker(props){
+      var marker = new google.maps.Marker({
+        position:props.coords,
+        map:map,
+      });
+    }
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT-0FLpw-7hornyLDgivo_s_vlQhWwbEA&callback=initMap">
+  </script>
+
 </body>
 
 
